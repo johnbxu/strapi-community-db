@@ -1251,7 +1251,7 @@
               }
             }
           },
-          "builds": {
+          "posts": {
             "type": "array",
             "items": {
               "required": [
@@ -1261,25 +1261,23 @@
                 "id": {
                   "type": "string"
                 },
-                "Title": {
+                "title": {
+                  "type": "string"
+                },
+                "post_type": {
+                  "type": "string",
+                  "enum": [
+                    "build",
+                    "blog"
+                  ]
+                },
+                "description": {
                   "type": "string"
                 },
                 "users_permissions_user": {
                   "type": "string"
                 },
-                "Description": {
-                  "type": "string"
-                },
-                "Class": {
-                  "type": "string",
-                  "enum": [
-                    "Devastator",
-                    "Pyromancer",
-                    "Technomancer",
-                    "Trickster"
-                  ]
-                },
-                "Skills": {
+                "skills": {
                   "type": "object"
                 },
                 "published_at": {
@@ -1335,7 +1333,7 @@
           "role": {
             "type": "string"
           },
-          "builds": {
+          "posts": {
             "type": "array",
             "items": {
               "type": "string"

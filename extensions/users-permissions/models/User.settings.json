@@ -59,9 +59,9 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "builds": {
+    "posts": {
       "via": "users_permissions_user",
-      "collection": "build"
+      "collection": "post"
     }
   }
 }

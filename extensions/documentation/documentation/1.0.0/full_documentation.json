@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/05/2021 7:37:18 PM"
+    "x-generation-date": "04/05/2021 7:56:25 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -45,7 +45,7 @@
     }
   ],
   "paths": {
-    "/builds": {
+    "/posts": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -57,7 +57,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Build"
+                    "$ref": "#/components/schemas/Post"
                   }
                 }
               }
@@ -96,7 +96,7 @@
         },
         "summary": "",
         "tags": [
-          "Build"
+          "Post"
         ],
         "parameters": [
           {
@@ -246,7 +246,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Build"
+                  "$ref": "#/components/schemas/Post"
                 }
               }
             }
@@ -284,7 +284,7 @@
         },
         "summary": "",
         "tags": [
-          "Build"
+          "Post"
         ],
         "requestBody": {
           "description": "",
@@ -292,14 +292,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBuild"
+                "$ref": "#/components/schemas/NewPost"
               }
             }
           }
         }
       }
     },
-    "/builds/count": {
+    "/posts/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -351,12 +351,12 @@
         },
         "summary": "",
         "tags": [
-          "Build"
+          "Post"
         ],
         "parameters": []
       }
     },
-    "/builds/{id}": {
+    "/posts/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -366,7 +366,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Build"
+                  "$ref": "#/components/schemas/Post"
                 }
               }
             }
@@ -404,7 +404,7 @@
         },
         "summary": "",
         "tags": [
-          "Build"
+          "Post"
         ],
         "parameters": [
           {
@@ -428,7 +428,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Build"
+                  "$ref": "#/components/schemas/Post"
                 }
               }
             }
@@ -466,7 +466,7 @@
         },
         "summary": "",
         "tags": [
-          "Build"
+          "Post"
         ],
         "requestBody": {
           "description": "",
@@ -474,7 +474,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBuild"
+                "$ref": "#/components/schemas/NewPost"
               }
             }
           }
@@ -540,7 +540,7 @@
         },
         "summary": "",
         "tags": [
-          "Build"
+          "Post"
         ],
         "parameters": [
           {
@@ -2785,7 +2785,7 @@
   },
   "components": {
     "schemas": {
-      "Build": {
+      "Post": {
         "required": [
           "id"
         ],
@@ -2793,7 +2793,17 @@
           "id": {
             "type": "string"
           },
-          "Title": {
+          "title": {
+            "type": "string"
+          },
+          "post_type": {
+            "type": "string",
+            "enum": [
+              "build",
+              "blog"
+            ]
+          },
+          "description": {
             "type": "string"
           },
           "users_permissions_user": {
@@ -2833,7 +2843,7 @@
               "role": {
                 "type": "string"
               },
-              "builds": {
+              "posts": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -2847,19 +2857,7 @@
               }
             }
           },
-          "Description": {
-            "type": "string"
-          },
-          "Class": {
-            "type": "string",
-            "enum": [
-              "Devastator",
-              "Pyromancer",
-              "Technomancer",
-              "Trickster"
-            ]
-          },
-          "Skills": {
+          "skills": {
             "type": "object"
           },
           "published_at": {
@@ -2868,27 +2866,25 @@
           }
         }
       },
-      "NewBuild": {
+      "NewPost": {
         "properties": {
-          "Title": {
+          "title": {
+            "type": "string"
+          },
+          "post_type": {
+            "type": "string",
+            "enum": [
+              "build",
+              "blog"
+            ]
+          },
+          "description": {
             "type": "string"
           },
           "users_permissions_user": {
             "type": "string"
           },
-          "Description": {
-            "type": "string"
-          },
-          "Class": {
-            "type": "string",
-            "enum": [
-              "Devastator",
-              "Pyromancer",
-              "Technomancer",
-              "Trickster"
-            ]
-          },
-          "Skills": {
+          "skills": {
             "type": "object"
           },
           "published_at": {
@@ -3002,7 +2998,7 @@
                 "role": {
                   "type": "string"
                 },
-                "builds": {
+                "posts": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -3121,7 +3117,7 @@
               }
             }
           },
-          "builds": {
+          "posts": {
             "type": "array",
             "items": {
               "required": [
@@ -3131,25 +3127,23 @@
                 "id": {
                   "type": "string"
                 },
-                "Title": {
+                "title": {
+                  "type": "string"
+                },
+                "post_type": {
+                  "type": "string",
+                  "enum": [
+                    "build",
+                    "blog"
+                  ]
+                },
+                "description": {
                   "type": "string"
                 },
                 "users_permissions_user": {
                   "type": "string"
                 },
-                "Description": {
-                  "type": "string"
-                },
-                "Class": {
-                  "type": "string",
-                  "enum": [
-                    "Devastator",
-                    "Pyromancer",
-                    "Technomancer",
-                    "Trickster"
-                  ]
-                },
-                "Skills": {
+                "skills": {
                   "type": "object"
                 },
                 "published_at": {
@@ -3205,7 +3199,7 @@
           "role": {
             "type": "string"
           },
-          "builds": {
+          "posts": {
             "type": "array",
             "items": {
               "type": "string"
@@ -3245,7 +3239,7 @@
   },
   "tags": [
     {
-      "name": "Build"
+      "name": "Post"
     },
     {
       "name": "Email - Email"
