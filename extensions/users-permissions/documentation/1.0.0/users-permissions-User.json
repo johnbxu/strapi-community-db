@@ -1250,43 +1250,6 @@
                 "type": "string"
               }
             }
-          },
-          "builds": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Class": {
-                  "type": "string"
-                },
-                "Title": {
-                  "type": "string"
-                },
-                "Build": {
-                  "type": "object"
-                },
-                "Description": {
-                  "type": "string"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           }
         }
       },
@@ -1328,12 +1291,6 @@
           },
           "role": {
             "type": "string"
-          },
-          "builds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
