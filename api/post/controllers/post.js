@@ -22,10 +22,24 @@ module.exports = {
       });
       if (post.users_permissions_user) {
         post.users_permissions_user = {
+          id: post.users_permissions_user.id,
           username: post.users_permissions_user.username,
         };
       }
       return post;
     });
+  },
+
+  async findOne(ctx) {
+    const { id } = ctx.params;
+
+    const entity = await strapi.services.post.findOne({ id });
+    const post = sanitizeEntity(entity, { model: strapi.models.post });
+
+    post.users_permissions_user = {
+      id: post.users_permissions_user.id,
+      username: post.users_permissions_user.username,
+    };
+    return post;
   },
 };

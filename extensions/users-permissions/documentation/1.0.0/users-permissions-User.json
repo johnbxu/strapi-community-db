@@ -1280,6 +1280,9 @@
                 "skills": {
                   "type": "object"
                 },
+                "class": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },
