@@ -1,8 +1,31 @@
-'use strict';
+"use strict";
 
 /**
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
  * to customize this controller
  */
 
-module.exports = {};
+const { sanitizeEntity } = require("strapi-utils");
+
+module.exports = {
+  async find(ctx) {
+    let entities;
+    if (ctx.query._q) {
+      entities = await strapi.services.post.search(ctx.query);
+    } else {
+      entities = await strapi.services.post.find(ctx.query);
+    }
+
+    return entities.map((entity) => {
+      const post = sanitizeEntity(entity, {
+        model: strapi.models.post,
+      });
+      if (post.users_permissions_user) {
+        post.users_permissions_user = {
+          username: post.users_permissions_user.username,
+        };
+      }
+      return post;
+    });
+  },
+};
