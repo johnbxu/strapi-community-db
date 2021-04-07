@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/skill-nodes",
+      "handler": "skill-node.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/skill-nodes/count",
+      "handler": "skill-node.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/skill-nodes/:id",
+      "handler": "skill-node.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/skill-nodes",
+      "handler": "skill-node.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/skill-nodes/:id",
+      "handler": "skill-node.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/skill-nodes/:id",
+      "handler": "skill-node.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

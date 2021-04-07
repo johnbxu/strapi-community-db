@@ -609,6 +609,12 @@
               "slug": {
                 "type": "string"
               },
+              "skill_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },

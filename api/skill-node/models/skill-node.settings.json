@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "classes",
+  "collectionName": "skill_nodes",
   "info": {
-    "name": "class",
-    "description": ""
+    "name": "skill_node"
   },
   "options": {
     "increments": true,
@@ -14,15 +13,17 @@
     "title": {
       "type": "string"
     },
-    "posts": {
-      "collection": "post",
-      "via": "class"
-    },
-    "slug": {
+    "description": {
       "type": "string"
     },
-    "skill_nodes": {
-      "collection": "skill-node"
+    "node_id": {
+      "type": "integer"
+    },
+    "prev_nodes": {
+      "type": "json"
+    },
+    "next_nodes": {
+      "type": "json"
     }
   }
 }

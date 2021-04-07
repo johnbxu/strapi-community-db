@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/classes": {
+    "/skill-nodes": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Class"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Class"
+          "Skill-node"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Class"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Class"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewClass"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/classes/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Class"
+          "Skill-node"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewSkill-node"
+              }
+            }
+          }
+        }
       }
     },
-    "/classes/{id}": {
+    "/skill-nodes/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Class"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Class"
+          "Skill-node"
+        ],
+        "parameters": []
+      }
+    },
+    "/skill-nodes/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Skill-node"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Class"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Class"
+          "Skill-node"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewClass"
+                "$ref": "#/components/schemas/NewSkill-node"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Class"
+          "Skill-node"
         ],
         "parameters": [
           {
@@ -514,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Class": {
+      "Skill-node": {
         "required": [
           "id"
         ],
@@ -525,89 +538,17 @@
           "title": {
             "type": "string"
           },
-          "posts": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "post_type": {
-                  "type": "string",
-                  "enum": [
-                    "build",
-                    "blog"
-                  ]
-                },
-                "description": {
-                  "type": "string"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "skills": {
-                  "type": "object"
-                },
-                "class": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "slug": {
+          "description": {
             "type": "string"
           },
-          "skill_nodes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "node_id": {
-                  "type": "integer"
-                },
-                "prev_nodes": {
-                  "type": "object"
-                },
-                "next_nodes": {
-                  "type": "object"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "node_id": {
+            "type": "integer"
+          },
+          "prev_nodes": {
+            "type": "object"
+          },
+          "next_nodes": {
+            "type": "object"
           },
           "published_at": {
             "type": "string",
@@ -615,25 +556,22 @@
           }
         }
       },
-      "NewClass": {
+      "NewSkill-node": {
         "properties": {
           "title": {
             "type": "string"
           },
-          "posts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "slug": {
+          "description": {
             "type": "string"
           },
-          "skill_nodes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "node_id": {
+            "type": "integer"
+          },
+          "prev_nodes": {
+            "type": "object"
+          },
+          "next_nodes": {
+            "type": "object"
           },
           "published_at": {
             "type": "string",
@@ -649,9 +587,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Class"
-    }
-  ]
+  "tags": []
 }
