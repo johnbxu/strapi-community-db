@@ -567,6 +567,12 @@
                     "type": "string"
                   }
                 },
+                "upvoted_posts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },

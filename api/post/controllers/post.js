@@ -20,12 +20,13 @@ module.exports = {
       const post = sanitizeEntity(entity, {
         model: strapi.models.post,
       });
-      if (post.users_permissions_user) {
-        post.users_permissions_user = {
-          id: post.users_permissions_user.id,
-          username: post.users_permissions_user.username,
+      if (post.author) {
+        post.author = {
+          id: post.author.id,
+          username: post.author.username,
         };
       }
+      post.votes = post.votes.length
       return post;
     });
   },
@@ -35,10 +36,11 @@ module.exports = {
 
     const entity = await strapi.services.post.findOne({ id });
     const post = sanitizeEntity(entity, { model: strapi.models.post });
+    post.votes = post.votes.length
 
-    post.users_permissions_user = {
-      id: post.users_permissions_user.id,
-      username: post.users_permissions_user.username,
+    post.author = {
+      id: post.author.id,
+      username: post.author.username,
     };
     return post;
   },

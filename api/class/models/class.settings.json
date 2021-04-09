@@ -15,8 +15,8 @@
       "type": "string"
     },
     "posts": {
-      "collection": "post",
-      "via": "class"
+      "via": "class",
+      "collection": "post"
     },
     "slug": {
       "type": "string"

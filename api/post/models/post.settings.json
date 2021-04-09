@@ -24,17 +24,22 @@
     "description": {
       "type": "richtext"
     },
-    "users_permissions_user": {
-      "plugin": "users-permissions",
-      "model": "user",
-      "via": "posts"
-    },
     "skills": {
       "type": "json"
     },
     "class": {
+      "model": "class",
+      "via": "posts"
+    },
+    "author": {
       "via": "posts",
-      "model": "class"
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "votes": {
+      "via": "upvoted_posts",
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }

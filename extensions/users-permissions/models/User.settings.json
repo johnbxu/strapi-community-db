@@ -60,8 +60,13 @@
       "configurable": false
     },
     "posts": {
-      "via": "users_permissions_user",
-      "collection": "post"
+      "collection": "post",
+      "via": "author"
+    },
+    "upvoted_posts": {
+      "collection": "post",
+      "via": "votes",
+      "dominant": true
     }
   }
 }

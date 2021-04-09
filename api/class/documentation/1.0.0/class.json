@@ -548,14 +548,20 @@
                 "description": {
                   "type": "string"
                 },
-                "users_permissions_user": {
-                  "type": "string"
-                },
                 "skills": {
                   "type": "object"
                 },
                 "class": {
                   "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "votes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
