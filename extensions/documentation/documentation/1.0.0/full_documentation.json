@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/09/2021 10:31:58 AM"
+    "x-generation-date": "04/13/2021 9:39:02 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3909,6 +3909,18 @@
                 "next_nodes": {
                   "type": "object"
                 },
+                "class": {
+                  "type": "string"
+                },
+                "x": {
+                  "type": "integer"
+                },
+                "y": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -4208,6 +4220,52 @@
           "next_nodes": {
             "type": "object"
           },
+          "class": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "slug": {
+                "type": "string"
+              },
+              "skill_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "x": {
+            "type": "integer"
+          },
+          "y": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4230,6 +4288,18 @@
           },
           "next_nodes": {
             "type": "object"
+          },
+          "class": {
+            "type": "string"
+          },
+          "x": {
+            "type": "integer"
+          },
+          "y": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

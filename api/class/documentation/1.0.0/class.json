@@ -603,6 +603,18 @@
                 "next_nodes": {
                   "type": "object"
                 },
+                "class": {
+                  "type": "string"
+                },
+                "x": {
+                  "type": "integer"
+                },
+                "y": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

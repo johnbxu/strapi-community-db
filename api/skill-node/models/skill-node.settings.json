@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "skill_nodes",
   "info": {
-    "name": "skill_node"
+    "name": "skill_node",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -24,6 +25,19 @@
     },
     "next_nodes": {
       "type": "json"
+    },
+    "class": {
+      "model": "class",
+      "via": "skill_nodes"
+    },
+    "x": {
+      "type": "integer"
+    },
+    "y": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "string"
     }
   }
 }

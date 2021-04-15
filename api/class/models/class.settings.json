@@ -15,13 +15,14 @@
       "type": "string"
     },
     "posts": {
-      "via": "class",
-      "collection": "post"
+      "collection": "post",
+      "via": "class"
     },
     "slug": {
       "type": "string"
     },
     "skill_nodes": {
+      "via": "class",
       "collection": "skill-node"
     }
   }

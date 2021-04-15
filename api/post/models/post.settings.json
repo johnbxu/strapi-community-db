@@ -28,8 +28,8 @@
       "type": "json"
     },
     "class": {
-      "model": "class",
-      "via": "posts"
+      "via": "posts",
+      "model": "class"
     },
     "author": {
       "via": "posts",
